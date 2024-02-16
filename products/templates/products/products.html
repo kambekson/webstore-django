@@ -2,34 +2,25 @@
 {% load static %}
 
 {% block css %}
-    <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link href="{% static 'vendor/css/products.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
+
   <div class="container">
-
     <div class="row">
-
         <div class="col-lg-3">
-
-            <h1 class="my-4">Store</h1>
+            <h1 class="my-4">WebStore</h1>
             <div class="list-group">
-                <a href="#" class="list-group-item">Новинки</a>
-                <a href="#" class="list-group-item">Одежда</a>
-                <a href="#" class="list-group-item">Обувь</a>
-                <a href="#" class="list-group-item">Аксессуары</a>
-                <a href="#" class="list-group-item">Подарки</a>
+                {% for category in categories %}
+                    <a href="#" class="list-group-item">
+                        {{ category.name }}</a>
+                {% endfor %}
             </div>
-
         </div>
-        <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
-
             <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -58,7 +49,6 @@
             </div>
 
             <div class="row">
-
                 {% for  product in products %}
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
@@ -95,11 +85,8 @@
                     </li>
                 </ul>
             </nav>
-
         </div>
-
     </div>
-
 </div>
 {% endblock %}
 
@@ -107,8 +94,8 @@
 {% block footer %}
   <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Store 2022</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Store 2024</p>
     </div>
-    <!-- /.container -->
-</footer>
+  </footer>
+
 {% endblock %}
