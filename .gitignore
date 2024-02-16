@@ -1,5 +1,5 @@
-/idea
+/.idea
 /venv
 qodana.yaml
-.Dockerfile
 /products_images
+/Dockerfile
