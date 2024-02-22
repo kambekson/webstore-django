@@ -6414,6 +6414,7 @@ a.close.disabled {
 
 .carousel {
   position: relative;
+  border-radius: 30px;
 }
 
 .carousel.pointer-event {
@@ -6438,6 +6439,7 @@ a.close.disabled {
   display: none;
   float: left;
   width: 100%;
+  border-radius: 30px;
   margin-right: -100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
