@@ -14,6 +14,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SECURE_SSL_REDIRECT = True # Включение перенаправления с HTTP на HTTPS
+
+SESSION_COOKIE_SECURE = True # Использование безопасных куки для сессий
+
+CSRF_COOKIE_SECURE = True # Использование безопасных куки для CSRF
+
+# Configure HSTS  HTTP Strict Transport Security (HSTS).
+# HSTS - это заголовок HTTP, который информирует браузер о том,
+# что все будущие подключения должны всегда использовать HTTPS.
+
+SECURE_HSTS_SECONDS = 3600  # (1 HOURS)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Применение HSTS ко всем поддоменам
+SECURE_HSTS_PRELOAD = True  # Включение предварительной загрузки HSTS
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -105,7 +121,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR/'static',
+    BASE_DIR / 'static',
 ]
 
 MEDIA_URL = '/media/'
